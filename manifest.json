@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Markdown Reader — 优雅的 Markdown 阅读器",
+  "version": "1.0.0",
+  "description": "打开 .md 文件时自动渲染为优雅排版的阅读器，支持在弹窗中自定义 CSS。适配 Zen Browser / Edge / Chrome / Chromium。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "js": ["content/highlight.js", "content/parser.js", "content/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Markdown Reader",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content/theme.css"],
+      "matches": ["http://*/*", "https://*/*", "file:///*"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "markdown-reader@mdreader.local",
+      "strict_min_version": "109.0"
+    }
+  }
+}

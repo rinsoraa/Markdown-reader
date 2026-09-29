@@ -1,0 +1,12 @@
+# 打包产物（通过 Release 分发）
+dist/
+
+# 本地生成
+test/preview.html
+node_modules/
+__pycache__/
+*.pyc
+
+# 系统文件
+Thumbs.db
+.DS_Store

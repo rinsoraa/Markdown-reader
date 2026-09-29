@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Markdown Reader</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-m">M</span><span class="logo-arrow">↓</span>
+        </div>
+        <div class="titles">
+            <h1>Markdown Reader</h1>
+            <p>优雅的 Markdown 阅读器 · 自定义 CSS</p>
+        </div>
+    </header>
+
+    <label class="switch-row" for="enabled">
+        <input type="checkbox" id="enabled">
+        <span class="switch-text">启用渲染（打开 .md 文件时自动排版）</span>
+    </label>
+
+    <div class="css-head">
+        <span class="css-title">自定义 CSS</span>
+        <span class="hint">在默认主题基础上追加，相同规则以这里为准；保存后所有已打开的 md 页面立即生效</span>
+    </div>
+
+    <textarea id="css" spellcheck="false" placeholder="例如：&#10;.markdown-body { max-width: 760px !important; }&#10;pre { background: #20242c !important; }"></textarea>
+
+    <div class="btns">
+        <button id="save" class="primary">保存</button>
+        <button id="reset" class="ghost">恢复默认主题</button>
+        <button id="clear" class="ghost">清空自定义</button>
+    </div>
+
+    <p id="status" class="status" aria-live="polite"></p>
+
+    <footer id="page-status"></footer>
+
+    <script src="popup.js"></script>
+</body>
+</html>
